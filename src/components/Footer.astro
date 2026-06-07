@@ -1,0 +1,26 @@
+---
+import { site } from "@/data/site"
+const year = new Date().getFullYear()
+---
+
+<footer class="border-t border-border py-8">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <p class="text-sm text-muted-foreground">
+      &copy; {year} {site.name}. All rights reserved.
+    </p>
+    <nav class="flex items-center gap-5" aria-label="Social">
+      {
+        site.socials.map((s) => (
+          <a
+            href={s.href}
+            target={s.href.startsWith("http") ? "_blank" : undefined}
+            rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            class="text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+          >
+            {s.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</footer>

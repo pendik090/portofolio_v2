@@ -1,0 +1,111 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import ProjectCard from "@/components/ProjectCard.astro"
+import { site, stats, techStack, projects } from "@/data/site"
+import { ArrowRight, ArrowUpRight, MapPin } from "@lucide/astro"
+
+const featured = projects.slice(0, 3)
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="animate-fade-up">
+    <p class="font-mono text-sm text-muted-foreground">
+      <span class="mr-2 inline-block size-3 translate-y-px rounded-full bg-foreground"></span>
+      Available for new projects
+    </p>
+
+    <h1 class="mt-6 text-balance text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
+      Hi, I&apos;m {site.name}.
+      <span class="block font-serif text-3xl italic text-muted-foreground sm:text-4xl">
+        {site.role}.
+      </span>
+    </h1>
+
+    <p class="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
+      {site.intro}
+    </p>
+
+    <div class="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
+      <MapPin class="size-4" />
+      <span>Based in {site.location}</span>
+    </div>
+
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <a
+        href="/projects"
+        class="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+      >
+        View projects
+        <ArrowRight class="size-4" />
+      </a>
+      <a
+        href="/about"
+        class="inline-flex h-10 items-center justify-center rounded-md border border-border px-4 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+      >
+        About me
+      </a>
+      <a
+        href={site.cvHref}
+        class="inline-flex h-10 items-center justify-center gap-1 rounded-md px-2 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+      >
+        Download CV
+        <ArrowUpRight class="size-4" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="mt-16 grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border">
+    {
+      stats.map((stat) => (
+        <div class="flex flex-col gap-1 bg-card p-5">
+          <span class="text-2xl font-semibold tracking-tight sm:text-3xl">
+            {stat.value}
+          </span>
+          <span class="text-xs leading-snug text-muted-foreground sm:text-sm">
+            {stat.label}
+          </span>
+        </div>
+      ))
+    }
+  </section>
+
+  <!-- Tech stack -->
+  <section class="mt-16">
+    <div class="flex items-baseline justify-between">
+      <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+        Tech stack
+      </h2>
+    </div>
+    <div class="mt-5 flex flex-wrap gap-2">
+      {
+        techStack.map((tech) => (
+          <span class="rounded-full border border-border px-3 py-1 text-sm text-foreground transition-colors hover:bg-accent">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Featured projects -->
+  <section class="mt-16">
+    <div class="flex items-baseline justify-between">
+      <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+        Selected work
+      </h2>
+      <a
+        href="/projects"
+        class="group inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        All projects
+        <ArrowRight class="size-3.5 transition-transform group-hover:translate-x-0.5" />
+      </a>
+    </div>
+
+    <div class="mt-5 grid gap-3 sm:grid-cols-2">
+      {featured.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>

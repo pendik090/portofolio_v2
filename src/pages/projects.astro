@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import ProjectCard from "@/components/ProjectCard.astro"
+import { projects } from "@/data/site"
+---
+
+<BaseLayout title="Projects — Rosfendik">
+  <section class="animate-fade-up">
+    <h1 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+      Projects
+    </h1>
+    <p class="mt-6 max-w-xl text-balance font-serif text-2xl leading-snug text-foreground sm:text-3xl">
+      A selection of systems and applications I&apos;ve designed and built.
+    </p>
+    <p class="mt-3 max-w-xl text-pretty leading-relaxed text-muted-foreground">
+      Most of my work centers on internal management systems and end-to-end web
+      applications, built with maintainability and clean architecture in mind.
+    </p>
+  </section>
+
+  <section class="mt-12 grid gap-3 sm:grid-cols-2">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </section>
+</BaseLayout>

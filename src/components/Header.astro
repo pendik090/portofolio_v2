@@ -1,0 +1,49 @@
+---
+import ThemeToggle from "@/components/ThemeToggle.tsx"
+import { site } from "@/data/site"
+
+const path = Astro.url.pathname
+const nav = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+]
+
+function isActive(href: string) {
+  if (href === "/") return path === "/"
+  return path.startsWith(href)
+}
+---
+
+<header
+  class="sticky top-0 z-50 -mx-6 flex items-center justify-between border-b border-border bg-background/80 px-6 py-4 backdrop-blur-sm sm:-mx-8 sm:px-8"
+>
+  <a
+    href="/"
+    class="whitespace-nowrap font-mono text-sm font-medium tracking-tight text-foreground transition-opacity hover:opacity-70"
+  >
+    {site.name.toLowerCase()}<span class="text-muted-foreground">.dev</span>
+  </a>
+
+  <nav class="flex items-center gap-0.5 sm:gap-1" aria-label="Primary">
+    {
+      nav.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "rounded-md px-2 py-1.5 text-sm transition-colors sm:px-3",
+            isActive(item.href)
+              ? "font-medium text-foreground"
+              : "text-muted-foreground hover:text-foreground",
+          ]}
+          aria-current={isActive(item.href) ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))
+    }
+    <div class="ml-1 sm:ml-2">
+      <ThemeToggle client:load />
+    </div>
+  </nav>
+</header>
