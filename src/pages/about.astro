@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro"
-import { site, techStack, stats } from "@/data/site"
+import { site, skillGroup, stats } from "@/data/site"
 import { ArrowUpRight } from "@lucide/astro"
 
 const skillGroups = [
@@ -37,15 +37,25 @@ const skillGroups = [
     </h2>
     <div class="mt-6 divide-y divide-border border-y border-border">
       {
-        skillGroups.map((group) => (
+        skillGroup.map((group) => (
           <div class="flex flex-col gap-3 py-5 sm:flex-row sm:items-baseline sm:gap-8">
             <span class="w-24 shrink-0 text-sm font-medium text-foreground">
               {group.label}
             </span>
             <div class="flex flex-wrap gap-2">
               {group.items.map((item) => (
-                <span class="rounded-full border border-border px-3 py-1 text-sm text-muted-foreground">
-                  {item}
+                <span class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-sm text-muted-foreground">
+                  <img
+                    src={item.icon.light}
+                    alt={item.name}
+                    class="block h-4 w-4 dark:hidden"
+                  />
+
+                  <img
+                    src={item.icon.dark}
+                    alt={item.name}
+                    class="hidden h-4 w-4 dark:block"
+                  />{item.name}
                 </span>
               ))}
             </div>

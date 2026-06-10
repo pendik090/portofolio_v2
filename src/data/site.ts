@@ -24,6 +24,136 @@ export const stats = [
   { value: "500+", label: "Contributions" },
 ] as const
 
+export const skillGroup = [
+  {
+    label: "Frontend",
+    items: [
+      {
+        name: "HTML5",
+        icon: {
+          light: "/icons/html5.svg",
+          dark: "/icons/html5.svg",
+        }
+      },
+      {
+        name: "CSS",
+        icon: {
+          light: "/icons/css3.svg",
+          dark: "/icons/css3.svg",
+        }
+      },
+      {
+        name: "JavaScript",
+        icon: {
+          light: "/icons/javascript.svg",
+          dark: "/icons/javascript.svg",
+        }
+      },
+      {
+        name: "Bootstrap",
+        icon: {
+          light: "/icons/bootstrap.svg",
+          dark: "/icons/bootstrap.svg",
+        }
+      },
+      {
+        name: "TailwindCSS",
+        icon: {
+          light: "/icons/tailwindcss.svg",
+          dark: "/icons/tailwindcss.svg",
+        }
+      },
+      {
+        name: "Flutter",
+        icon: {
+          light: "/icons/flutter.svg",
+          dark: "/icons/flutter.svg",
+        }
+      },
+    ]
+  },
+  {
+    label: "Backend",
+    items: [
+      {
+        name: "PHP",
+        icon: {
+          light: "/icons/php-light.svg",
+          dark: "/icons/php-dark.svg",
+        }
+      },
+      {
+        name: "MySQL",
+        icon: {
+          light: "/icons/mysql-light.svg",
+          dark: "/icons/mysql-dark.svg",
+        }
+      },
+      {
+        name: "PostgreSQL",
+        icon: {
+          light: "/icons/postgresql.svg",
+          dark: "/icons/postgresql.svg",
+        }
+      },
+      {
+        name: "Python",
+        icon: {
+          light: "/icons/python.svg",
+          dark: "/icons/python.svg",
+        }
+      },
+      {
+        name: "Codeigniter",
+        icon: {
+          light: "/icons/codeigniter.svg",
+          dark: "/icons/codeigniter.svg",
+        }
+      },
+      {
+        name: "Laravel",
+        icon: {
+          light: "/icons/laravel.svg",
+          dark: "/icons/laravel.svg",
+        }
+      },
+    ]
+  },
+  {
+    label: "Tools",
+    items: [
+      {
+        name: "Figma",
+        icon: {
+          light: "/icons/figma.svg",
+          dark: "/icons/figma.svg",
+        }
+      },
+      {
+        name: "Gitlab",
+        icon: {
+          light: "/icons/gitlab.svg",
+          dark: "/icons/gitlab.svg",
+        }
+      },
+      {
+        name: "Github",
+        icon: {
+          light: "/icons/github-light.svg",
+          dark: "/icons/github-dark.svg",
+        }
+      },
+      {
+        name: "Postman",
+        icon: {
+          light: "/icons/postman.svg",
+          dark: "/icons/postman.svg",
+        }
+      },
+    ]
+  }
+]
+
 export const techStack = [
   {
     name: "HTML5",
@@ -107,6 +237,13 @@ export const techStack = [
     icon: {
       light: "/icons/laravel.svg",
       dark: "/icons/laravel.svg",
+    }
+  },
+  {
+    name: "Flutter",
+    icon: {
+      light: "/icons/flutter.svg",
+      dark: "/icons/flutter.svg",
     }
   },
   {
