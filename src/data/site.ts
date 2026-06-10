@@ -25,22 +25,137 @@ export const stats = [
 ] as const
 
 export const techStack = [
-  "HTML5",
-  "CSS",
-  "JavaScript",
-  "MySQL",
-  "Bootstrap",
-  "TailwindCSS",
-  "PHP",
-  "Python",
-  "Dart",
-  "CodeIgniter",
-  "Laravel",
-  "Flutter",
-  "Figma",
-  "Git",
-  "GitLab",
-] as const
+  {
+    name: "HTML5",
+    icon: {
+      light: "/icons/html5.svg",
+      dark: "/icons/html5.svg",
+    }
+  },
+  {
+    name: "CSS",
+    icon: {
+      light: "/icons/css3.svg",
+      dark: "/icons/css3.svg",
+    }
+  },
+  {
+    name: "JavaScript",
+    icon: {
+      light: "/icons/javascript.svg",
+      dark: "/icons/javascript.svg",
+    }
+  },
+  {
+    name: "MySQL",
+    icon: {
+      light: "/icons/mysql-light.svg",
+      dark: "/icons/mysql-dark.svg",
+    }
+  },
+  {
+    name: "PostgreSQL",
+    icon: {
+      light: "/icons/postgresql.svg",
+      dark: "/icons/postgresql.svg",
+    }
+  },
+  {
+    name: "Bootstrap",
+    icon: {
+      light: "/icons/bootstrap.svg",
+      dark: "/icons/bootstrap.svg",
+    }
+  },
+  {
+    name: "TailwindCSS",
+    icon: {
+      light: "/icons/tailwindcss.svg",
+      dark: "/icons/tailwindcss.svg",
+    }
+  },
+  {
+    name: "PHP",
+    icon: {
+      light: "/icons/php-light.svg",
+      dark: "/icons/php-dark.svg",
+    }
+  },
+  {
+    name: "Python",
+    icon: {
+      light: "/icons/python.svg",
+      dark: "/icons/python.svg",
+    }
+  },
+  {
+    name: "Dart",
+    icon: {
+      light: "/icons/dart.svg",
+      dark: "/icons/dart.svg",
+    }
+  },
+  {
+    name: "Codeigniter",
+    icon: {
+      light: "/icons/codeigniter.svg",
+      dark: "/icons/codeigniter.svg",
+    }
+  },
+  {
+    name: "Laravel",
+    icon: {
+      light: "/icons/laravel.svg",
+      dark: "/icons/laravel.svg",
+    }
+  },
+  {
+    name: "Astro",
+    icon: {
+      light: "/icons/astro-light.svg",
+      dark: "/icons/astro-dark.svg",
+    }
+  },
+  {
+    name: "Figma",
+    icon: {
+      light: "/icons/figma.svg",
+      dark: "/icons/figma.svg",
+    }
+  },
+  {
+    name: "Gitlab",
+    icon: {
+      light: "/icons/gitlab.svg",
+      dark: "/icons/gitlab.svg",
+    }
+  },
+  {
+    name: "Github",
+    icon: {
+      light: "/icons/github-light.svg",
+      dark: "/icons/github-dark.svg",
+    }
+  },
+]
+
+// export const techStack = [
+//   "HTML5",
+//   "CSS",
+//   "JavaScript",
+//   "MySQL",
+//   "Bootstrap",
+//   "TailwindCSS",
+//   "PHP",
+//   "Python",
+//   "Dart",
+//   "CodeIgniter",
+//   "Laravel",
+//   "Flutter",
+//   "Figma",
+//   "Git",
+//   "GitLab",
+// ] as const
 
 export type Project = {
   title: string

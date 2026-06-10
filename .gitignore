@@ -7,6 +7,7 @@ __v0_jsx-dev-runtime.ts
 .vercel/
 
 # Common ignores
+dist
 node_modules
 .next/
 .DS_Store

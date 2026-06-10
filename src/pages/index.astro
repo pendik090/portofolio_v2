@@ -81,8 +81,18 @@ const featured = projects.slice(0, 3)
     <div class="mt-5 flex flex-wrap gap-2">
       {
         techStack.map((tech) => (
-          <span class="rounded-full border border-border px-3 py-1 text-sm text-foreground transition-colors hover:bg-accent">
-            {tech}
+          <span class="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-sm text-foreground transition-colors hover:bg-accent">
+            <img
+              src={tech.icon.light}
+              alt={tech.name}
+              class="block h-4 w-4 dark:hidden"
+            />
+
+            <img
+              src={tech.icon.dark}
+              alt={tech.name}
+              class="hidden h-4 w-4 dark:block"
+            />{tech.name}
           </span>
         ))
       }
