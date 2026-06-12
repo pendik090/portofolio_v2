@@ -1,3 +1,5 @@
+import { TECH_STACKS } from "./tech-stack"
+
 export const site = {
   name: "Rosfendik",
   role: "Full Stack Developer",
@@ -276,30 +278,13 @@ export const techStack = [
   },
 ]
 
-// export const techStack = [
-//   "HTML5",
-//   "CSS",
-//   "JavaScript",
-//   "MySQL",
-//   "Bootstrap",
-//   "TailwindCSS",
-//   "PHP",
-//   "Python",
-//   "Dart",
-//   "CodeIgniter",
-//   "Laravel",
-//   "Flutter",
-//   "Figma",
-//   "Git",
-//   "GitLab",
-// ] as const
-
 export type Project = {
   title: string
   description: string
   year: string
-  tags: string[]
+  tech: (typeof TECH_STACKS)[keyof typeof TECH_STACKS][]
   href: string
+  image: string
 }
 
 export const projects: Project[] = [
@@ -308,31 +293,53 @@ export const projects: Project[] = [
     description:
       "Internal web-based management system built for course management and education company use at Creative Media.",
     year: "2025",
-    tags: ["Laravel", "Bootstrap", "TailwindCSS", "MySQL"],
+    tech: [
+      TECH_STACKS.laravel,
+      TECH_STACKS.bootstrap,
+      TECH_STACKS.tailwind,
+      TECH_STACKS.mysql,
+    ],
     href: "#",
+    image: "img/projects/cmobile_after.png",
   },
   {
     title: "My Portal App",
     description:
       "Invoice app system for managing and tracking invoices efficiently for internal use at PT Diamond Hire Indonesia.",
     year: "2025",
-    tags: ["CodeIgniter", "Bootstrap", "MySQL"],
+    tech: [
+      TECH_STACKS.codeigniter,
+      TECH_STACKS.bootstrap,
+      TECH_STACKS.mysql,
+    ],
     href: "#",
+    image: "img/projects/myportal.png",
   },
   {
-    title: "Uki Education",
+    title: "UW Open",
     description:
-      "Internal management system built for UKI Education — an education center that operates across multiple branches.",
+      "UW Open is a real time tennis match system designed to streamline tournament organization and player management.",
     year: "2024",
-    tags: ["Laravel", "Bootstrap", "TailwindCSS", "MySQL"],
+    tech: [
+      TECH_STACKS.laravel,
+      TECH_STACKS.bootstrap,
+      TECH_STACKS.mysql,
+    ],
     href: "#",
+    image: "img/projects/uwopen4.png",
   },
   {
     title: "Masjid Baiturrahiim",
     description:
       "A community mosque project focused on providing a serene, informative environment for community activities.",
     year: "2024",
-    tags: ["HTML5", "CSS", "Bootstrap"],
+    tech: [
+      TECH_STACKS.laravel,
+      TECH_STACKS.bootstrap,
+      TECH_STACKS.tailwind,
+      TECH_STACKS.mysql,
+    ],
     href: "#",
+    image: "img/projects/masjid1.png",
   },
 ]

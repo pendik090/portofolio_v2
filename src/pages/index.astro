@@ -4,7 +4,7 @@ import ProjectCard from "@/components/ProjectCard.astro"
 import { site, stats, techStack, projects } from "@/data/site"
 import { ArrowRight, ArrowUpRight, MapPin } from "@lucide/astro"
 
-const featured = projects.slice(0, 3)
+const featured = projects.slice(0, 4)
 ---
 
 <BaseLayout>
@@ -115,7 +115,7 @@ const featured = projects.slice(0, 3)
     </div>
 
     <div class="mt-5 grid gap-3 sm:grid-cols-2">
-      {featured.map((project) => <ProjectCard project={project} />)}
+      {featured.map((project, tech) => <ProjectCard project={project} />)}
     </div>
   </section>
 </BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import type { Project } from "@/data/site"
 import { ArrowUpRight } from "@lucide/astro"
+import type { TechStack } from "@/data/tech-stack";
 
 interface Props {
   project: Project
@@ -10,28 +11,49 @@ const { project } = Astro.props
 
 <a
   href={project.href}
-  class="group flex flex-col gap-3 rounded-lg border border-border bg-card p-5 transition-colors hover:border-foreground/30 hover:bg-accent/50"
+  class="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-foreground/30 hover:bg-accent/50"
 >
-  <div class="flex items-start justify-between gap-4">
-    <h3 class="font-medium leading-tight tracking-tight text-foreground">
-      {project.title}
-    </h3>
-    <ArrowUpRight
-      class="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+  <div class="aspect-video overflow-hidden bg-muted">
+    <img
+      src={project.image}
+      alt={project.title}
+      class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
     />
   </div>
+  <div class="flex flex-col gap-3 p-5">
+    <div class="flex items-start justify-between gap-4">
+      <h3 class="font-medium leading-tight tracking-tight text-foreground">
+        {project.title}
+      </h3>
+      <ArrowUpRight
+        class="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+      />
+    </div>
 
-  <p class="text-sm leading-relaxed text-muted-foreground">
-    {project.description}
-  </p>
+    <p class="text-xs font-mono leading-relaxed text-muted-foreground">
+      {project.description}
+    </p>
 
-  <div class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1">
-    <span class="font-mono text-xs text-muted-foreground">{project.year}</span>
-    <span class="text-muted-foreground/40">·</span>
-    {
-      project.tags.map((tag) => (
-        <span class="font-mono text-xs text-muted-foreground">{tag}</span>
-      ))
-    }
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+      <span class="font-mono text-xs text-muted-foreground">{project.year}</span>
+      <span class="text-muted-foreground text-xl">·</span>
+      {
+        project.tech.map((tech) => (
+          <span class="font-mono text-xs text-muted-foreground gap-y-2">
+            <img
+              src={tech.iconLight}
+              alt={tech.name}
+              class="block h-4 w-4 dark:hidden"
+            />
+
+            <img
+              src={tech.iconDark}
+              alt={tech.name}
+              class="hidden h-4 w-4 dark:block"
+            />
+          </span>
+        ))
+      }
+    </div>
   </div>
 </a>
