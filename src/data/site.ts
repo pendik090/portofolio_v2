@@ -291,6 +291,30 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+    {
+    title: "Portofolio Project",
+    description:
+      "A personal developer portofolio project built with TypeScript, React, Astro JS and TailwindCSS",
+    year: "2026",
+    tech: [
+      TECH_STACKS.typescript,
+      TECH_STACKS.react,
+      TECH_STACKS.astro,
+      TECH_STACKS.tailwind,
+    ],
+    slug: "portofolio",
+    images: [
+      "/img/projects/portofolio.png",
+    ],
+    overview:
+      "Personal website portofolio built with Typescript, React, Astro and TailwindCSS. Project data is persisted in Typescript data with light and dark mode support.",
+    features: [
+      "Home Page - Profile, Summary, Tech Stack, Selected Work and Documents",
+      "About Page - Detail about profile, current experience and education background",
+      "Project Page - All of project ",
+      "Summary of all my projects that have been worked on for more than 1 year as a full stack developer",
+    ],
+  },
   {
     title: "C-Mobile (Migration Project)",
     description:
@@ -338,7 +362,35 @@ export const projects: Project[] = [
       "Export to PDF and Excel formats",
     ],
   },
-    {
+  {
+    title: "Uki Education",
+    description:
+      "Internal management system built for UKI Education — an education operates across multiple branches.",
+    year: "2025",
+    tech: [
+      TECH_STACKS.laravel,
+      TECH_STACKS.bootstrap,
+      TECH_STACKS.tailwind,
+      TECH_STACKS.mysql,
+    ],
+    slug: "uki-education",
+    images: [
+      "/img/projects/ukiedu3.png",
+      "/img/projects/ukiedu1.png",
+      "/img/projects/ukiedu2.png",
+    ],
+    overview:
+      "Internal management system built for UKI Education. It is basically a one-stop platform that handles two main worlds: the academic/student side (enrollments, payments, subjects, tutors, schools) and the HR/employee side (attendance leave, overtime, payroll, performance tracking).",
+    features: [
+      "Dynamic role-based menus and access are controlled per role, making it easy to fine-tune what each user sees",
+      "School & branch management for partner schools and multi-branch operations",
+      "Account switchingfor users with multiple roles can switch between accounts without logging out",
+      "Bulk data import to supports Excel import for students, schools, employees, and performance data",
+      "Student management to register and track students with full personal and family data, class schedules, and enrollment status",
+      "ayment tracking to record and monitor student payment history, including school-level billing",
+    ],
+  },
+  {
     title: "Masjid Baiturrahiim",
     description:
       "A community mosque project focused on providing a serene, informative environment for community activities.",
@@ -365,34 +417,6 @@ export const projects: Project[] = [
       "Sermon and article publishing (CMS)",
       "Photo gallery of mosque activities",
       "Contact and feedback form for the community",
-    ],
-  },
-    {
-    title: "Uki Education",
-    description:
-      "Internal management system built for UKI Education — an education operates across multiple branches.",
-    year: "2025",
-    tech: [
-      TECH_STACKS.laravel,
-      TECH_STACKS.bootstrap,
-      TECH_STACKS.tailwind,
-      TECH_STACKS.mysql,
-    ],
-    slug: "uki-education",
-    images: [
-      "/img/projects/ukiedu1.png",
-      "/img/projects/ukiedu2.png",
-      "/img/projects/ukiedu3.png",
-    ],
-    overview:
-      "Internal management system built for UKI Education. It is basically a one-stop platform that handles two main worlds: the academic/student side (enrollments, payments, subjects, tutors, schools) and the HR/employee side (attendance leave, overtime, payroll, performance tracking).",
-    features: [
-      "Dynamic role-based menus and access are controlled per role, making it easy to fine-tune what each user sees",
-      "School & branch management for partner schools and multi-branch operations",
-      "Account switchingfor users with multiple roles can switch between accounts without logging out",
-      "Bulk data import to supports Excel import for students, schools, employees, and performance data",
-      "Student management to register and track students with full personal and family data, class schedules, and enrollment status",
-      "ayment tracking to record and monitor student payment history, including school-level billing",
     ],
   },
   {
@@ -481,7 +505,7 @@ export const projects: Project[] = [
   {
     title: "Basic Programming Course",
     description:
-      "Provide learning resources and guidance for beginners to understand the fundamentals of programming for 10 meetings",
+      "Provide learning resources for beginners to understand the fundamentals of programming for 10 meetings",
     year: "2025",
     tech: [
       TECH_STACKS.python,
@@ -559,7 +583,7 @@ export const projects: Project[] = [
   {
     title: "Mitra Tani 27",
     description:
-      "Web and mobile-based farmer partnership system built to enhance collaboration and resource management between farmers and suppliers.",
+      "Web and mobile-based farmer partnership system built to enhance collaboration between farmers and suppliers.",
     year: "2025",
     tech: [
       TECH_STACKS.figma,
@@ -569,7 +593,7 @@ export const projects: Project[] = [
       "/img/design/mitratani_mockup.png",
     ],
     overview:
-      "The system includes a web-based admin panel for cooperative staff to manage farmer profiles, product listings, orders, and payments; and a mobile app for farmers to browse available products, place orders, and track deliveries.",
+      "The system includes a web-based admin panel and mobile app for farmers and cooperative staff to manage farmer profiles, product listings, orders, and payments to browse available products, place orders, and track deliveries.",
     features: [
       "Quality Control - Implement a quality control system to ensure that all products meet the cooperative's standards before being listed on the platform",
       "Approved Supplier List to approved suppliers that farmers can choose from when placing orders, ensuring reliability and quality of products",
@@ -596,6 +620,26 @@ export const projects: Project[] = [
       "Room Service - An interactive menu with detailed descriptions and images of each item to help guests make informed choices",
       "Real-time Order Tracking - Guests can track the status of their room service orders in real time, from preparation to delivery",
       "Cart & Checkout system that allows guests to review their order before checkout, with multiple payment options available"
+    ],
+  },
+  {
+    title: "Visitor Management System",
+    description:
+      "Designed to fulfill requirements from the client to provide visitor management solution on site.",
+    year: "2025",
+    tech: [
+      TECH_STACKS.figma,
+    ],
+    slug: "visitor-app",
+    images: [
+      "/img/design/visitor_mockup.png",
+    ],
+    overview:
+      "Visitor Management System designed to streamline the check-in process for visitors at on site project. The system includes a web-based admin panel for reception staff to manage visitor profiles using RFID tags for quick check-ins.",
+    features: [
+      "RFID Check-in - Scan RFID tags for visitors to quickly check in upon arrival",
+      "Monitoring visitor traffic - Generate reports on visitor traffic patterns, peak hours, and frequent visitors.",
+      "Real-time Updates - Provide real-time updates on appointment status to both visitors and reception staff",
     ],
   },
 ]

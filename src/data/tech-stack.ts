@@ -30,6 +30,24 @@ export const TECH_STACKS = {
     iconLight: "/icons/python.svg",
     iconDark: "/icons/python.svg",
   },
+  typescript: {
+    id: "typescript",
+    name: "Typescript",
+    iconLight: "/icons/typescript.svg",
+    iconDark: "/icons/typescript.svg",
+  },
+  react: {
+    id: "react",
+    name: "React",
+    iconLight: "/icons/react-light.svg",
+    iconDark: "/icons/react-dark.svg",
+  },
+  astro: {
+    id: "astro",
+    name: "Astro",
+    iconLight: "/icons/astro-light.svg",
+    iconDark: "/icons/astro-dark.svg",
+  },
   googleColab: {
     id: "googleColab",
     name: "Google Colab",
