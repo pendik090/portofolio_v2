@@ -4,7 +4,7 @@ export const site = {
   name: "Rosfendik",
   role: "Full Stack Developer",
   location: "Surabaya, Indonesia",
-  email: "hello@rosfendik.my.id",
+  email: "rospendik321@gmail",
   tagline: "Full Stack Developer based in Surabaya",
   intro:
     "I build end-to-end web applications — from database design to responsive, user-friendly interfaces. I work across the frontend and backend with modern technologies, focused on solutions that are efficient, scalable, and maintainable.",
@@ -13,11 +13,11 @@ export const site = {
     "I have a strong interest in clean code, application performance, and optimal user experience. My goal is to ensure that every project I work on not only functions well, but also delivers meaningful value to the people who use it.",
   ],
   socials: [
-    { label: "GitHub", href: "https://github.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "Email", href: "mailto:hello@rosfendik.my.id" },
+    { label: "GitHub", href: "https://github.com/pendik090" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/ros-fendik-ba4998208" },
+    { label: "Email", href: "mailto:rospendik321@gmail.com" },
   ],
-  cvHref: "#",
+  cvHref: "/docs/CV Rosfendik.pdf",
 } as const
 
 export const stats = [
