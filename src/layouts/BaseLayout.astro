@@ -8,16 +8,26 @@ import "@fontsource/geist-mono/400.css"
 import "@/styles/globals.css"
 import Header from "@/components/Header.astro"
 import Footer from "@/components/Footer.astro"
+import { site } from "@/data/site"
 
 interface Props {
   title?: string
   description?: string
+  image?: string
+  canonical?: string
+  type?: "website" | "article"
 }
 
 const {
   title = "Rosfendik — Full Stack Developer",
   description = "Full Stack Developer based in Surabaya, building efficient, scalable, and maintainable web applications.",
+  image = site.ogImage,
+  canonical,
+  type = "website",
 } = Astro.props
+
+const fullUrl = canonical ? `${site.url}${canonical}` : site.url
+const fullImage = image.startsWith("http") ? image : `${site.url}${image}`
 ---
 
 <!doctype html>
@@ -25,11 +35,32 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={site.name} />
+    <meta name="robots" content="index, follow" />
+
     <meta name="theme-color" content="#fcfcfc" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#272727" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/jpg" href="/public/img/favicon.jpg">
-    <title>{title}</title>
+
+    <link rel="icon" type="image/jpg" href="/img/favicon.jpg" />
+    <link rel="canonical" href={fullUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:image" content={fullImage} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content={site.name} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImage} />
+
     <script is:inline>
       ;(function () {
         try {

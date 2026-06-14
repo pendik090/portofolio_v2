@@ -19,7 +19,13 @@ const slides = [
 ]
 ---
 
-<BaseLayout title={`${project.title} — Rosfendik`}>
+<BaseLayout
+  title={`${project.title} — Rosfendik`}
+  description={project.description}
+  canonical={`/projects/${project.slug}`}
+  image={project.images[0]}
+  type="article"
+>
   <FadeUp>
   <section>
     <a

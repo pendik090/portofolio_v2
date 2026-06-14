@@ -7,6 +7,8 @@ export const site = {
   email: "rospendik321@gmail",
   tagline: "Full Stack Developer based in Surabaya",
   avatar: "/img/profile1.jpeg",
+  url: "https://rosfendik.dev",
+  ogImage: "/img/profile1.jpeg",
   intro:
     "I am working across the frontend and backend with modern technologies, focused on solutions that are efficient, scalable, and maintainable.",
   about: [
