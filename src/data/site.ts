@@ -6,8 +6,9 @@ export const site = {
   location: "Surabaya, Indonesia",
   email: "rospendik321@gmail",
   tagline: "Full Stack Developer based in Surabaya",
+  avatar: "/img/profile1.jpeg",
   intro:
-    "I build end-to-end web applications — from database design to responsive, user-friendly interfaces. I work across the frontend and backend with modern technologies, focused on solutions that are efficient, scalable, and maintainable.",
+    "I am working across the frontend and backend with modern technologies, focused on solutions that are efficient, scalable, and maintainable.",
   about: [
     "I am a Full Stack Developer with around a year of experience building end-to-end web applications, from database design to implementing responsive and user-friendly interfaces. I'm comfortable working across both the frontend and backend with modern technologies.",
     "I have a strong interest in clean code, application performance, and optimal user experience. My goal is to ensure that every project I work on not only functions well, but also delivers meaningful value to the people who use it.",
