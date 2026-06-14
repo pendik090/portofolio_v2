@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro"
+import FadeUp from "@/components/FadeUp.astro"
 import ProjectCard from "@/components/ProjectCard.astro"
 import { projects } from "@/data/site"
 ---
 
 <BaseLayout title="Projects — Rosfendik">
-  <section class="animate-fade-up">
+  <FadeUp>
+  <section>
     <h1 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
       Projects
     </h1>
@@ -17,8 +19,11 @@ import { projects } from "@/data/site"
       applications, built with maintainability and clean architecture in mind.
     </p>
   </section>
+  </FadeUp>
 
+  <FadeUp delay={200}>
   <section class="mt-12 grid gap-3 sm:grid-cols-2">
     {projects.map((project) => <ProjectCard project={project} />)}
   </section>
+  </FadeUp>
 </BaseLayout>

@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro"
+import FadeUp from "@/components/FadeUp.astro"
 import { site, skillGroup, careers, education } from "@/data/site"
 import { ArrowUpRight, Building2, MapPin, ChevronDown, GraduationCap } from "@lucide/astro"
 ---
 
 <BaseLayout title="About — Rosfendik">
-  <section class="animate-fade-up">
+  <FadeUp>
+  <section>
     <h1 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
       About
     </h1>
@@ -23,8 +25,10 @@ import { ArrowUpRight, Building2, MapPin, ChevronDown, GraduationCap } from "@lu
       }
     </div>
   </section>
+  </FadeUp>
 
   <!-- Skills -->
+  <FadeUp delay={200}>
   <section class="mt-14">
     <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
       What I work with
@@ -58,8 +62,10 @@ import { ArrowUpRight, Building2, MapPin, ChevronDown, GraduationCap } from "@lu
       }
     </div>
   </section>
+  </FadeUp>
 
   <!-- Experience -->
+  <FadeUp delay={400}>
   <section class="mt-14">
     <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
       Experience
@@ -152,8 +158,10 @@ import { ArrowUpRight, Building2, MapPin, ChevronDown, GraduationCap } from "@lu
       </div>
     </div>
   </section>
+  </FadeUp>
 
   <!-- Education -->
+  <FadeUp delay={600}>
   <section class="mt-14">
     <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
       Education
@@ -206,8 +214,10 @@ import { ArrowUpRight, Building2, MapPin, ChevronDown, GraduationCap } from "@lu
       }
     </div>
   </section>
+  </FadeUp>
 
   <!-- Contact -->
+  <FadeUp delay={800}>
   <section class="mt-14 rounded-lg border border-border bg-card p-6 sm:p-8">
     <h2 class="text-balance font-serif text-2xl italic text-foreground">
       Let&apos;s build something together.
@@ -224,6 +234,7 @@ import { ArrowUpRight, Building2, MapPin, ChevronDown, GraduationCap } from "@lu
       <ArrowUpRight class="size-4" />
     </a>
   </section>
+  </FadeUp>
 </BaseLayout>
 
 <script is:inline>

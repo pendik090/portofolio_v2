@@ -1,0 +1,76 @@
+---
+interface Props {
+  delay?: number
+  duration?: number
+  threshold?: number
+  blurAmount?: number
+  distance?: number
+  class?: string
+}
+
+const {
+  delay = 0,
+  duration = 700,
+  threshold = 0.1,
+  blurAmount = 12,
+  distance = 20,
+  class: className = "",
+} = Astro.props
+---
+
+<div
+  class={className}
+  data-fade-up
+  data-delay={delay}
+  data-duration={duration}
+  data-threshold={threshold}
+  data-blur={blurAmount}
+  data-distance={distance}
+>
+  <slot />
+</div>
+
+<style is:global>
+  @media (prefers-reduced-motion: no-preference) {
+    [data-fade-up] {
+      opacity: 0;
+      transform: translateY(var(--fade-distance, 20px));
+      filter: blur(var(--fade-blur, 12px));
+      will-change: opacity, transform, filter;
+    }
+    [data-fade-up].in-view {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0px);
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll("[data-fade-up]").forEach((el) => {
+    const threshold = Number(el.getAttribute("data-threshold")) || 0.1
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const delay = Number(el.getAttribute("data-delay")) || 0
+          const duration = Number(el.getAttribute("data-duration")) || 700
+          const blur = Number(el.getAttribute("data-blur")) || 12
+          const distance = Number(el.getAttribute("data-distance")) || 20
+
+          el.style.setProperty("--fade-distance", `${distance}px`)
+          el.style.setProperty("--fade-blur", `${blur}px`)
+          el.style.transition = [
+            `opacity ${duration}ms cubic-bezier(0.22, 1, 0.36, 1)`,
+            `transform ${duration}ms cubic-bezier(0.22, 1, 0.36, 1)`,
+            `filter ${duration}ms cubic-bezier(0.22, 1, 0.36, 1)`,
+          ].join(", ")
+          el.style.transitionDelay = `${delay}ms`
+          el.classList.add("in-view")
+          observer.unobserve(el)
+        }
+      },
+      { threshold },
+    )
+    observer.observe(el)
+  })
+</script>

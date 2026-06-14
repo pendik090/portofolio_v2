@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro"
+import FadeUp from "@/components/FadeUp.astro"
 import { projects } from "@/data/site"
 import { ArrowLeft, ChevronLeft, ChevronRight, Check } from "@lucide/astro"
 
@@ -19,7 +20,8 @@ const slides = [
 ---
 
 <BaseLayout title={`${project.title} — Rosfendik`}>
-  <section class="animate-fade-up">
+  <FadeUp>
+  <section>
     <a
       href="/projects"
       class="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -71,6 +73,7 @@ const slides = [
     </div>
 
     <div class="mt-8 space-y-8">
+      <FadeUp delay={200}>
       <div>
         <div class="flex items-baseline justify-between gap-4">
           <h1 class="text-2xl font-semibold leading-tight tracking-tight text-foreground sm:text-3xl">
@@ -84,7 +87,9 @@ const slides = [
           {project.description}
         </p>
       </div>
+      </FadeUp>
 
+      <FadeUp delay={400}>
       <div class="rounded-lg border border-border bg-card">
         <div class="flex flex-col gap-1.5 p-6 pb-0">
           <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -97,7 +102,9 @@ const slides = [
           </p>
         </div>
       </div>
+      </FadeUp>
 
+      <FadeUp delay={600}>
       <div class="rounded-lg border border-border bg-card">
         <div class="flex flex-col gap-1.5 p-6 pb-0">
           <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -117,7 +124,9 @@ const slides = [
           </ul>
         </div>
       </div>
+      </FadeUp>
 
+      <FadeUp delay={800}>
       <div class="rounded-lg border border-border bg-card">
         <div class="flex flex-col gap-1.5 p-6 pb-0">
           <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -144,8 +153,10 @@ const slides = [
           </div>
         </div>
       </div>
+      </FadeUp>
     </div>
   </section>
+  </FadeUp>
 </BaseLayout>
 
 <script is:inline>

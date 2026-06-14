@@ -295,7 +295,7 @@ export const projects: Project[] = [
     {
     title: "Portofolio Project",
     description:
-      "A personal developer portofolio project built with TypeScript, React, Astro JS and TailwindCSS",
+      "A personal developer portofolio project built from scratch with TypeScript, React, Astro JS and TailwindCSS",
     year: "2026",
     tech: [
       TECH_STACKS.typescript,
@@ -366,7 +366,7 @@ export const projects: Project[] = [
   {
     title: "Uki Education",
     description:
-      "Internal management system built for UKI Education — an education operates across multiple branches.",
+      "Internal management system built for UKI Education — a course institution that operates across multiple branches.",
     year: "2025",
     tech: [
       TECH_STACKS.laravel,
