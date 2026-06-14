@@ -287,6 +287,7 @@ export type Project = {
   images: string[]
   overview: string
   features: string[]
+  video?: string
 }
 
 export const projects: Project[] = [
@@ -488,9 +489,11 @@ export const projects: Project[] = [
     ],
     slug: "programming-course",
     images: [
+      "/img/teaching/thumbnail_teaching.jpeg",
       "/img/teaching/teaching1.png",
       "/img/teaching/teaching2.png",
     ],
+    video: "/img/teaching/teaching.mp4",
     overview:
       "The course covers fundamental topics such as variables, data types, data structures, functions, and object-oriented programming, using Google Colab to enhance the learning experience. Each meeting lasts for 2 hours.",
     features: [
