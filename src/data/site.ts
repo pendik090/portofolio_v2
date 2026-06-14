@@ -283,8 +283,10 @@ export type Project = {
   description: string
   year: string
   tech: (typeof TECH_STACKS)[keyof typeof TECH_STACKS][]
-  href: string
-  image: string
+  slug: string
+  images: string[]
+  overview: string
+  features: string[]
 }
 
 export const projects: Project[] = [
@@ -292,15 +294,25 @@ export const projects: Project[] = [
     title: "C-Mobile (Migration Project)",
     description:
       "Internal web-based management system built for course management and education company use at Creative Media.",
-    year: "2025",
+    year: "2026",
     tech: [
       TECH_STACKS.laravel,
       TECH_STACKS.bootstrap,
       TECH_STACKS.tailwind,
       TECH_STACKS.mysql,
     ],
-    href: "#",
-    image: "img/projects/cmobile_after.png",
+    slug: "c-mobile",
+    images: ["/img/projects/cmobile_after.png"],
+    overview:
+      "A complete migration and redesign of an existing internal management system for Creative Media, a course and education company. The system handles student enrollment, class scheduling, instructor management, and payment tracking across multiple programs.",
+    features: [
+      "Student enrollment and registration management",
+      "Class scheduling and instructor assignment",
+      "Payment tracking and invoice generation",
+      "Role-based access for admin and staff",
+      "Responsive dashboard with real-time statistics",
+      "Integration with legacy database architecture with zero data loss",
+    ],
   },
   {
     title: "My Portal App",
@@ -312,8 +324,75 @@ export const projects: Project[] = [
       TECH_STACKS.bootstrap,
       TECH_STACKS.mysql,
     ],
-    href: "#",
-    image: "img/projects/myportal.png",
+    slug: "my-portal-app",
+    images: ["/img/projects/myportal2.png", "/img/projects/myportal.png"],
+    overview:
+      "An internal invoice management portal built for PT Diamond Hire Indonesia to digitize and automate their invoicing workflow. The system streamlines invoice creation, approval routing, payment tracking, and reporting — replacing a manual spreadsheet-based process.",
+    features: [
+      "1000+ Client and vendor management",
+      "Invoice creation with auto-generated invoice numbers",
+      "Multi-level approval workflow",
+      "Payment status tracking (unpaid, partial, paid)",
+      "Monthly and yearly financial reports",
+      "Export to PDF and Excel formats",
+    ],
+  },
+    {
+    title: "Masjid Baiturrahiim",
+    description:
+      "A community mosque project focused on providing a serene, informative environment for community activities.",
+    year: "2024",
+    tech: [
+      TECH_STACKS.html,
+      TECH_STACKS.css,
+      TECH_STACKS.javascript,
+      TECH_STACKS.bootstrap,
+    ],
+    slug: "masjid-baiturrahiim",
+    images: [
+      "/img/projects/masjid1.png",
+      "/img/projects/masjid2.png",
+      "/img/projects/masjid3.png",
+      "/img/projects/masjid4.png",
+    ],
+    overview:
+      "A community website and management system for Masjid Baiturrahiim, designed to serve as a digital hub for mosque activities. The platform provides prayer schedules, event announcements, donation management, and a content management system for administrators to keep the community informed.",
+    features: [
+      "Prayer time schedule with automatic daily updates",
+      "Event calendar and announcement system",
+      "Online donation and fundraising management",
+      "Sermon and article publishing (CMS)",
+      "Photo gallery of mosque activities",
+      "Contact and feedback form for the community",
+    ],
+  },
+    {
+    title: "Uki Education",
+    description:
+      "Internal management system built for UKI Education — an education operates across multiple branches.",
+    year: "2025",
+    tech: [
+      TECH_STACKS.laravel,
+      TECH_STACKS.bootstrap,
+      TECH_STACKS.tailwind,
+      TECH_STACKS.mysql,
+    ],
+    slug: "uki-education",
+    images: [
+      "/img/projects/ukiedu1.png",
+      "/img/projects/ukiedu2.png",
+      "/img/projects/ukiedu3.png",
+    ],
+    overview:
+      "Internal management system built for UKI Education. It is basically a one-stop platform that handles two main worlds: the academic/student side (enrollments, payments, subjects, tutors, schools) and the HR/employee side (attendance leave, overtime, payroll, performance tracking).",
+    features: [
+      "Dynamic role-based menus and access are controlled per role, making it easy to fine-tune what each user sees",
+      "School & branch management for partner schools and multi-branch operations",
+      "Account switchingfor users with multiple roles can switch between accounts without logging out",
+      "Bulk data import to supports Excel import for students, schools, employees, and performance data",
+      "Student management to register and track students with full personal and family data, class schedules, and enrollment status",
+      "ayment tracking to record and monitor student payment history, including school-level billing",
+    ],
   },
   {
     title: "UW Open",
@@ -325,22 +404,196 @@ export const projects: Project[] = [
       TECH_STACKS.bootstrap,
       TECH_STACKS.mysql,
     ],
-    href: "#",
-    image: "img/projects/uwopen4.png",
+    slug: "uw-open",
+    images: [
+      "/img/projects/uwopen1.png",
+      "/img/projects/uwopen2.png",
+      "/img/projects/uwopen3.png",
+      "/img/projects/uwopen4.png",
+    ],
+    overview:
+      "A real-time tennis tournament management system built for UW Open events. The platform handles player registration, match scheduling, live score tracking, and bracket progression — allowing organizers to run tournaments efficiently and participants to follow matches in real time.",
+    features: [
+      "Player registration and seeding management",
+      "Automated bracket generation (single elimination)",
+      "Real-time score entry and live match tracking",
+      "Tournament schedule and court assignment",
+      "Player profiles with match history",
+      "Public leaderboard and match results page",
+    ],
   },
   {
-    title: "Masjid Baiturrahiim",
+    title: "Diakademik",
     description:
-      "A community mosque project focused on providing a serene, informative environment for community activities.",
+      "Diakademik is a full-featured School Management Information System (SMIS) built for Indonesian educational institutions.",
     year: "2024",
     tech: [
       TECH_STACKS.laravel,
       TECH_STACKS.bootstrap,
-      TECH_STACKS.tailwind,
       TECH_STACKS.mysql,
+      TECH_STACKS.chartjs,
     ],
-    href: "#",
-    image: "img/projects/masjid1.png",
+    slug: "diakademik",
+    images: [
+      "/img/projects/diakad1.png",
+      "/img/projects/diakad2.png",
+      "/img/projects/diakad3.png",
+      "/img/projects/diakad4.png",
+    ],
+    overview:
+      "Diakademik is a full-featured School Management Information System (SMIS) built for Indonesian educational institutions. It covers pretty much every operational angle of a school — from student admissions (PPDB) all the way through graduation — with a heavily role-based architecture that serves administrators, teachers, students, parents, finance staff, guidance counselors, and more. The system has grown significantly over time (migrations dating back to 2018), and already use for more than 40+ schools.",
+    features: [
+      "Student Admissions(PPDB) for new student registration.",
+      "E-Learning — online classes, teaching materials with file uploads, quizzes, etc.",
+      "Financial Management — Monthly tuition payment (SPP) Management",
+      "Multi-Role Access Control — 12+ distinct roles (admin, teacher, student, parent, etc.)",
+      "Daily attendance with fingerprint device integration and whatsapp notification to parents",
+      "Grading & Report Cards — subject grades, extracurricular grades, and report cards",
+    ],
+  },
+  {
+    title: "Invoice App System",
+    description:
+      "Internal business management to handles full lifecycle of client order and tracking payments contract",
+    year: "2025",
+    tech: [
+      TECH_STACKS.laravel,
+      TECH_STACKS.bootstrap,
+      TECH_STACKS.mysql,
+      TECH_STACKS.chartjs,
+    ],
+    slug: "invoice-app",
+    images: [
+      "/img/projects/invoice1.png",
+      "/img/projects/invoice2.png",
+    ],
+    overview:
+      "Invoice App System is an internal business management system built for Creative Media, a company based in Surabaya. It handles the full lifecycle of client orders from capturing company and service data, building orders, generating professional PDF invoices, to tracking payments and maintenance contracts.",
+    features: [
+      "Email notifications — sends maintenance reminder emails automatically",
+      "Order & cart system — build orders by selecting services and packages, with a cart-style flow before finalizing",
+      "Invoice management — automatically calculates for PPN/PPH tax, and stream invoices as PDF",
+      "Reports & exports — exportable reports for invoices, orders, customers, and maintenance to Excel",
+      "Multi-role access — separate dashboards and permissions for admin and super admin",
+    ],
+  },
+  {
+    title: "Basic Programming Course",
+    description:
+      "Provide learning resources and guidance for beginners to understand the fundamentals of programming for 10 meetings",
+    year: "2025",
+    tech: [
+      TECH_STACKS.python,
+      TECH_STACKS.googleColab,
+    ],
+    slug: "programming-course",
+    images: [
+      "/img/teaching/teaching1.png",
+      "/img/teaching/teaching2.png",
+    ],
+    overview:
+      "The course covers fundamental topics such as variables, data types, data structures, functions, and object-oriented programming, using Google Colab to enhance the learning experience. Each meeting lasts for 2 hours.",
+    features: [
+      "Learning Modules - Structured modules covering fundamental programming concepts with interactive examples and exercises",
+      "Final project to apply student knowledge by building a simple application using the concepts learned throughout the course",
+      "Lifetime consultations to ensure the students understanding",
+    ],
+  },
+  {
+    title: "Smart PJU",
+    description:
+      "Device managemnet system project focused on providing real time data and analytics for public lighting",
+    year: "2025",
+    tech: [
+      TECH_STACKS.laravel,
+      TECH_STACKS.bootstrap,
+      TECH_STACKS.mysql,
+      TECH_STACKS.javascript,
+    ],
+    slug: "smart-pju",
+    images: [
+      "/img/projects/smartpju1.png",
+      "/img/projects/smartpju2.png",
+      "/img/projects/smartpju3.png",
+    ],
+    overview:
+      "Smart PJU bridges IoT hardware with a web dashboard — devices push real-time sensor readings through an API, and the system takes care of the rest: storing records, visualizing data on a map, and flagging devices that go silent.",
+    features: [
+      "Device registry with full metadata — brand, voltage, equipment checklist, etc",
+      "Interactive map view showing all georeferenced devices with operation and remaining lifetime",
+      "REST API with Laravel Sanctum authentication for IoT devices to push sensor data",
+      "Real-time electrical monitoring to tracks source/load voltage, current, and power for each device",
+      "Detailed monitoring page per device with QR code generation for quick field access",
+    ],
+  },
+  {
+    title: "QHSE",
+    description:
+      "Quality, Health, Safety, and Environment (QHSE) management platform built for construction or project-based companies.",
+    year: "2025",
+    tech: [
+      TECH_STACKS.laravel,
+      TECH_STACKS.bootstrap,
+      TECH_STACKS.mysql,
+      TECH_STACKS.javascript,
+    ],
+    slug: "qhse",
+    images: [
+      "/img/projects/qhse1.png",
+      "/img/projects/qhse2.png",
+    ],
+    overview:
+      "Quality, Health, Safety, and Environment (QHSE) management platform built for construction or project-based companies. It centralizes everything from project tracking and daily work reports to equipment inspections and safety observations",
+    features: [
+      "Notification System for inspections, reports, and surveys",
+      "Daily Work Reports to structured daily reports with multi-level approval chain (QHSE Officer → Project Manager → Holding)",
+      "K3 Safety Observation — log and monitor occupational health and safety field observations",
+      "Role & Permission Management — granular access control via role-based permissions",
+      "Survey Module — location/site surveys with a full status lifecycle (pending → assessed → VP approval → approved/rejected)",
+      "Dashboard with Charts — project status doughnut chart, QHSE activity bar chart, and latest data widgets"
+    ],
+  },
+  {
+    title: "Mitra Tani 27",
+    description:
+      "Web and mobile-based farmer partnership system built to enhance collaboration and resource management between farmers and suppliers.",
+    year: "2025",
+    tech: [
+      TECH_STACKS.figma,
+    ],
+    slug: "mitratani",
+    images: [
+      "/img/design/mitratani_mockup.png",
+    ],
+    overview:
+      "The system includes a web-based admin panel for cooperative staff to manage farmer profiles, product listings, orders, and payments; and a mobile app for farmers to browse available products, place orders, and track deliveries.",
+    features: [
+      "Quality Control - Implement a quality control system to ensure that all products meet the cooperative's standards before being listed on the platform",
+      "Approved Supplier List to approved suppliers that farmers can choose from when placing orders, ensuring reliability and quality of products",
+      "Planting Management that allows farmers to track their planting schedules, receive reminders for watering and fertilizing, and access best practices for crop care",
+    ],
+  },
+  {
+    title: "Wyndham Room Service",
+    description:
+      "Wyndham Room Service is a room service management system designed to streamline orders built in mobile and web platforms.",
+    year: "2025",
+    tech: [
+      TECH_STACKS.figma,
+    ],
+    slug: "wyndham",
+    images: [
+      "/img/design/wyndham_mockup1.png",
+      "/img/design/wyndham_mockup2.png",
+    ],
+    overview:
+      "Wyndham Room Service App allows guests to easily browse the menu, place orders, and track their delivery status in real time. It also provides a user-friendly interface for hotel staff to manage incoming orders, update order statuses, and ensure timely delivery to guest rooms.",
+    features: [
+      "Room Access - Lock and Unlock room doors directly from the app for seamless entry during room service deliveries",
+      "Room Service - An interactive menu with detailed descriptions and images of each item to help guests make informed choices",
+      "Real-time Order Tracking - Guests can track the status of their room service orders in real time, from preparation to delivery",
+      "Cart & Checkout system that allows guests to review their order before checkout, with multiple payment options available"
+    ],
   },
 ]
 
@@ -363,15 +616,13 @@ export const careers: CareerEntry[] = [
     startDate: "May 2025",
     endDate: "Present",
     type: "Onsite • Employee",
-    // description:
-    //   "Developing and maintaining web-based management systems for internal operations and client projects across multiple education and business domains.",
     responsibilities: [
       "Developed 4+ web-based client and internal projects using Laravel, Bootstrap, and MySQL",
       "Managed database backups and ensured data integrity for production systems",
       "Designed and implemented responsive user interfaces with TailwindCSS and Bootstrap",
       "Conducted course training sessions for new team members and interns",
     ],
-    logo: "img/logo_cm.jpg"
+    logo: "/img/logo_cm.jpg"
   },
   {
     company: "PT Javadwipa Duta Mandiri",
@@ -380,15 +631,13 @@ export const careers: CareerEntry[] = [
     startDate: "Oct 2024",
     endDate: "May 2025",
     type: "Onsite • Internship",
-    // description:
-    //   "Contributed to the development of internal tools and client-facing applications across web and mobile platforms.",
     responsibilities: [
       "Built a web-based HSE document management system using Laravel",
       "Developed a CCTV monitoring mobile application using Flutter and MQTT protocol",
       "Designed UI wireframes and prototypes for a visitor management system using Figma",
       "Collaborated with the engineering team on code reviews and sprint planning",
     ],
-    logo: "img/javadwipa_logo.jpg"
+    logo: "/img/javadwipa_logo.jpg"
   },
   {
     company: "PT Digital Solusi Master",
@@ -397,14 +646,12 @@ export const careers: CareerEntry[] = [
     startDate: "Dec 2023",
     endDate: "Feb 2024",
     type: "Onsite • Internship",
-    // description:
-    //   "Contributed to the development and optimization of a school information management system.",
     responsibilities: [
       "Developed and maintained features for a school information system using Laravel",
       "Optimized complex MySQL database queries to improve application performance",
       "Assisted in client relationship management and requirement gathering sessions",
     ],
-    logo: "img/solusimaster_logo.jpg"
+    logo: "/img/solusimaster_logo.jpg"
   },
   {
     company: "PT Dwitunggal Jaya Abadi",
@@ -413,8 +660,6 @@ export const careers: CareerEntry[] = [
     startDate: "July 2018",
     endDate: "Aug 2020",
     type: "Onsite • Employee",
-    // description:
-    //   "Maintained IoT-based Automatic Meter Reading (AMR) devices for PLN, ensuring reliable real-time data transmission to the central monitoring system.",
     responsibilities: [
       "Installed and maintained IoT-based Automatic Meter Reading (AMR) devices for PLN customers",
       "Ensured real-time data transmission from field devices to the central monitoring website",
@@ -441,7 +686,7 @@ export const education: EducationEntry[] = [
     startYear: "2020",
     endYear: "2024",
     gpa: "3.66 / 4.00",
-    logo: "img/untag_logo.jpg"
+    logo: "/img/untag_logo.jpg"
   },
   {
     institution: "SMK Negeri 7 Surabaya",
@@ -449,6 +694,6 @@ export const education: EducationEntry[] = [
     location: "Surabaya",
     startYear: "2015",
     endYear: "2018",
-    logo: "img/smk7.png"
+    logo: "/img/smk7.png"
   },
 ]

@@ -1,7 +1,6 @@
 ---
 import type { Project } from "@/data/site"
 import { ArrowUpRight } from "@lucide/astro"
-import type { TechStack } from "@/data/tech-stack";
 
 interface Props {
   project: Project
@@ -10,12 +9,12 @@ const { project } = Astro.props
 ---
 
 <a
-  href={project.href}
+  href={"/projects/" + project.slug}
   class="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-foreground/30 hover:bg-accent/50"
 >
   <div class="aspect-video overflow-hidden bg-muted">
     <img
-      src={project.image}
+      src={project.images[0]}
       alt={project.title}
       class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
     />
