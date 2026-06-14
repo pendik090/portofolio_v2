@@ -1,13 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro"
-import { site, skillGroup, stats } from "@/data/site"
-import { ArrowUpRight } from "@lucide/astro"
-
-const skillGroups = [
-  { label: "Frontend", items: ["HTML5", "CSS", "JavaScript", "TailwindCSS", "Bootstrap", "Flutter"] },
-  { label: "Backend", items: ["PHP", "Laravel", "CodeIgniter", "Python", "MySQL"] },
-  { label: "Tools", items: ["Git", "GitLab", "Figma", "Dart"] },
-]
+import { site, skillGroup, careers, education } from "@/data/site"
+import { ArrowUpRight, Building2, MapPin, ChevronDown, GraduationCap } from "@lucide/astro"
 ---
 
 <BaseLayout title="About — Rosfendik">
@@ -65,18 +59,152 @@ const skillGroups = [
     </div>
   </section>
 
-  <!-- Quick facts -->
-  <section class="mt-14 grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border">
-    {
-      stats.map((stat) => (
-        <div class="flex flex-col gap-1 bg-card p-5">
-          <span class="text-2xl font-semibold tracking-tight">{stat.value}</span>
-          <span class="text-xs leading-snug text-muted-foreground sm:text-sm">
-            {stat.label}
-          </span>
-        </div>
-      ))
-    }
+  <!-- Experience -->
+  <section class="mt-14">
+    <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+      Experience
+    </h2>
+
+    <div class="relative mt-6">
+      <div class="absolute left-5.75 top-0 h-full w-px bg-border" aria-hidden="true"></div>
+
+      <div class="space-y-8">
+        {
+          careers.map((entry, i) => (
+            <div class="relative pl-12">
+              <div
+                class:list={[
+                  "absolute left-4 top-5 size-3.5 rounded-full border-2",
+                  i === 0
+                    ? "bg-foreground border-foreground"
+                    : "bg-card border-border",
+                ]}
+                aria-hidden="true"
+              ></div>
+
+              <div class="rounded-lg border border-border bg-card transition-colors hover:border-foreground/30">
+                <div class="flex items-start gap-4 p-5 pb-0">
+                  <div class="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-muted">
+                    {entry.logo ? (
+                      <img
+                        src={entry.logo}
+                        alt={entry.company}
+                        class="h-full w-full object-cover"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                      />
+                    ) : null}
+                    <Building2
+                      class="size-5 text-muted-foreground"
+                      style={entry.logo ? "display:none" : ""}
+                    />
+                  </div>
+
+                  <div class="min-w-0 flex-1">
+                    <div class="flex flex-wrap items-start justify-between gap-2">
+                      <h3 class="font-semibold leading-tight text-foreground">
+                        {entry.role}
+                      </h3>
+                      <span class="shrink-0 rounded-full border border-accent bg-accent/30 px-2.5 py-0.5 font-mono text-xs text-accent-foreground">
+                        {entry.startDate} — {entry.endDate}
+                      </span>
+                    </div>
+                    <p class="mt-0.5 text-sm text-muted-foreground">
+                      {entry.company}
+                      <span class="mx-1.5 text-muted-foreground/40">·</span>
+                      <MapPin class="mr-0.5 inline size-3 align-middle" />
+                      {entry.location}
+                    </p>
+                    <p class="mt-1 text-xs text-muted-foreground">
+                      {entry.type}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  class="group mt-3 flex w-full items-center gap-2 border-t border-border px-5 py-3 text-left text-sm transition-colors hover:bg-accent/50 accordion-toggle"
+                  aria-expanded="false"
+                >
+                  <ChevronDown
+                    class="size-4 text-muted-foreground transition-transform duration-200 group-aria-expanded:rotate-180"
+                  />
+                  <span class="text-muted-foreground group-aria-expanded:hidden">
+                    Show Details
+                  </span>
+                  <span class="text-muted-foreground hidden group-aria-expanded:inline">
+                    Hide Details
+                  </span>
+                </button>
+
+                <div class="accordion-content hidden px-5 pb-5">
+                  <ul class="mt-3 space-y-2">
+                    {entry.responsibilities.map((r) => (
+                      <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span class="mt-1.5 block size-1.5 shrink-0 rounded-full bg-muted-foreground/40"></span>
+                        {r}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="mt-14">
+    <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+      Education
+    </h2>
+
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      {
+        education.map((entry) => (
+          <div class="rounded-lg border border-border bg-card p-5">
+            <div class="flex items-start gap-4">
+              <div class="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-muted">
+                {entry.logo ? (
+                  <img
+                    src={entry.logo}
+                    alt={entry.institution}
+                    class="h-full w-full object-contain"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                  />
+                ) : null}
+                <GraduationCap
+                  class="size-5 text-muted-foreground"
+                  style={entry.logo ? "display:none" : ""}
+                />
+              </div>
+              <div class="min-w-0">
+                <h3 class="font-semibold leading-tight text-foreground">
+                  {entry.degree}
+                </h3>
+                <p class="mt-0.5 text-sm text-muted-foreground">
+                  {entry.institution}
+                </p>
+                <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <span class="flex items-center gap-1 text-xs text-muted-foreground">
+                    <MapPin class="size-3" />
+                    {entry.location}
+                  </span>
+                  <span class="text-xs text-muted-foreground">
+                    {entry.startYear} — {entry.endYear}
+                  </span>
+                </div>
+                {entry.gpa && (
+                  <span class="mt-2 inline-block rounded-full bg-accent/30 px-2.5 py-0.5 font-mono text-xs text-accent-foreground">
+                    GPA {entry.gpa}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </section>
 
   <!-- Contact -->
@@ -97,3 +225,17 @@ const skillGroups = [
     </a>
   </section>
 </BaseLayout>
+
+<script is:inline>
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".accordion-toggle")
+    if (!btn) return
+
+    const content = btn.nextElementSibling
+    if (!content || !content.classList.contains("accordion-content")) return
+
+    const isOpen = btn.getAttribute("aria-expanded") === "true"
+    btn.setAttribute("aria-expanded", !isOpen)
+    content.classList.toggle("hidden", isOpen)
+  })
+</script>
