@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import FadeUp from "@/components/FadeUp.astro"
-import { projects } from "@/data/site"
+import { projects } from "@/data/projects"
 import { ArrowLeft, ChevronLeft, ChevronRight, Check } from "@lucide/astro"
 
 export function getStaticPaths() {
@@ -89,14 +89,14 @@ const slides = [
             {project.year}
           </span>
         </div>
-        <p class="mt-3 max-w-xl text-pretty leading-relaxed text-muted-foreground">
+        <p class="mt-3 max-w-full text-pretty leading-relaxed text-muted-foreground">
           {project.description}
         </p>
       </div>
       </FadeUp>
 
       <FadeUp delay={400}>
-      <div class="rounded-lg border border-border bg-card">
+      <div class="rounded-lg border border-border bg-secondary">
         <div class="flex flex-col gap-1.5 p-6 pb-0">
           <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
             Overview
@@ -111,7 +111,7 @@ const slides = [
       </FadeUp>
 
       <FadeUp delay={600}>
-      <div class="rounded-lg border border-border bg-card">
+      <div class="rounded-lg border border-border bg-secondary">
         <div class="flex flex-col gap-1.5 p-6 pb-0">
           <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
             Features
@@ -133,7 +133,7 @@ const slides = [
       </FadeUp>
 
       <FadeUp delay={800}>
-      <div class="rounded-lg border border-border bg-card">
+      <div class="rounded-lg border border-border bg-secondary">
         <div class="flex flex-col gap-1.5 p-6 pb-0">
           <h2 class="font-mono text-xs uppercase tracking-widest text-muted-foreground">
             Tech Stack

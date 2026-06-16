@@ -1,5 +1,5 @@
 ---
-import type { Project } from "@/data/site"
+import type { Project } from "@/data/projects"
 import { ArrowUpRight } from "@lucide/astro"
 import FadeUp from "@/components/FadeUp.astro"
 
@@ -31,7 +31,7 @@ const { project } = Astro.props
         />
       </div>
   
-      <p class="text-xs font-mono leading-relaxed text-muted-foreground">
+      <p class="text-xs font-mono leading-relaxed text-muted-foreground line-clamp-3">
         {project.description}
       </p>
   

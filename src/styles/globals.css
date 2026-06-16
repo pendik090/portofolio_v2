@@ -42,7 +42,7 @@
   --radius: 0.5rem;
 
   /* Light — warm off-white paper with near-black ink */
-  --background: oklch(0.992 0 0);
+  --background: oklch(0.9818 0.0054 95.1);
   --foreground: oklch(0.205 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.205 0 0);
@@ -58,8 +58,8 @@
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.91 0 0);
-  --input: oklch(0.91 0 0);
+  --border: oklch(0.9072 0.0122 67.67);
+  --input: oklch(0.9072 0.0122 67.67);
   --ring: oklch(0.205 0 0);
 }
 

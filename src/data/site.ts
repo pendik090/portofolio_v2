@@ -14,9 +14,10 @@ export const site = {
     "I have a strong interest in clean code, application performance, and optimal user experience. My goal is to ensure that every project I work on not only functions well, but also delivers meaningful value to the people who use it.",
   ],
   socials: [
-    { label: "GitHub", href: "https://github.com/pendik090" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/ros-fendik-ba4998208" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/rosfendik-ba4998208?" },
+    { label: "Instagram", href: "https://www.instagram.com/14pendik_/" },
     { label: "Email", href: "mailto:rospendik321@gmail.com" },
+    { label: "GitHub", href: "https://github.com/pendik090" },
   ],
   cvHref: "/docs/CV Rosfendik.pdf",
 } as const

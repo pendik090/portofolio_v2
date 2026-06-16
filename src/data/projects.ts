@@ -138,7 +138,7 @@ export const projects: Project[] = [
     {
     title: "Portofolio Project",
     description:
-      "A personal developer portofolio project built from scratch with TypeScript, React, Astro JS and TailwindCSS",
+      "A personal developer portofolio project built from scratch with TypeScript, React, Astro JS and TailwindCSS. Available with dark mode and light mode.",
     year: "2026",
     tech: [
       TECH_STACKS.typescript,

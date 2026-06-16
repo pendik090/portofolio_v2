@@ -20,7 +20,7 @@ const featured = projects.slice(0, 4)
     </div>
     <div class="flex flex-row items-start gap-2 sm:gap-2 sm:items-center">
       <div class="min-w-0 flex-1">
-        <h1 class="mt-6 text-balance text-xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
+        <h1 class="mt-2 text-balance text-xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
           Hi, I&apos;m {site.name}.
           <span class="block font-serif text-xl italic text-muted-foreground sm:text-4xl">
             {site.role}.
@@ -30,6 +30,16 @@ const featured = projects.slice(0, 4)
         <p class="mt-2 max-w-md text-pretty text-sm text-start sm:text-align leading-relaxed text-muted-foreground sm:max-w-md sm:text-base sm:mt-6">
           {site.intro}
         </p>
+        <div class="max-w-full mt-2 flex gap-2">
+        {
+          socials.map((s) => (
+              <a href={s.link} class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-transparent text-foreground transition-colors hover:bg-accent">
+                <img src={s.iconLight} class="block h-4 w-4 dark:hidden"/>
+                <img src={s.iconDark} class="hidden h-4 w-4 dark:block"/>
+              </a>
+          ))
+        }
+        </div>
       </div>
 
       <div class="shrink-0">
@@ -39,22 +49,11 @@ const featured = projects.slice(0, 4)
       </div>
     </div>
     <div class="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-          <MapPin class="size-4" />
-          <span>Based in {site.location}</span>
-        </div>
+      <MapPin class="size-4" />
+      <span>Based in {site.location}</span>
+    </div>
 
-        <!-- {
-          socials.map((social) => {
-            <div class="mt-6 max-w-md">
-              <a href={social.link} type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-transparent text-foreground transition-colors hover:bg-accent">
-                <img src={social.iconLight} class="block h-4 w-4 dark:hidden"/>
-                <img src={social.iconDark} class="block h-4 w-4 dark:block"/>
-              </a>
-            </div>
-          })
-        } -->
-
-    <div class="mt-8 flex flex-wrap items-center gap-3 sm:inline-flex">
+    <div class="mt-4 flex flex-wrap items-center gap-3 sm:inline-flex">
       <a
         href="/projects"
         class="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
