@@ -3,7 +3,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro"
 import FadeUp from "@/components/FadeUp.astro"
 import ProjectCard from "@/components/ProjectCard.astro"
 import StatusTypewriter from "@/components/StatusTypewriter"
-import { site, stats, techStack, projects } from "@/data/site"
+import { techStack, projects } from "@/data/projects"
+import { site, stats } from "@/data/site"
 import { socials } from "@/data/social"
 import { ArrowRight, ArrowUpRight, MapPin } from "@lucide/astro"
 
@@ -14,7 +15,7 @@ const featured = projects.slice(0, 4)
   <!-- Hero -->
   <FadeUp>
   <section>
-    <div class="flex-">
+    <div class="flex-1">
       <StatusTypewriter client:load />
     </div>
     <div class="flex flex-row items-start gap-2 sm:gap-2 sm:items-center">

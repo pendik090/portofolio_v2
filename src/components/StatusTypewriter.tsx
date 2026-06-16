@@ -16,7 +16,7 @@ export default function StatusTypewriter({
   texts = [
     "Available for new projects",
     "Open to collaboration",
-    "Building side projects",
+    "Let's work together",
   ],
   typingSpeed = 80,
   deletingSpeed = 40,
