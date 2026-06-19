@@ -87,9 +87,9 @@ export default function StatusTypewriter({
   }, [showCursor, cursorBlinkSpeed])
 
   return (
-    <p className={`font-mono text-sm text-muted-foreground ${className}`}>
+    <p className={`font-mono text-sm text-muted-foreground ${className}`} translate="no">
       <span className="mr-2 inline-block size-3 translate-y-px rounded-full bg-foreground" />
-      <span>{text || "\u00A0"}</span>
+      <span className="notranslate">{text || "\u00A0"}</span>
       {showCursor && (
         <span
           className="ml-0.5 font-mono"
